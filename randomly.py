@@ -12,7 +12,7 @@
 
 
 
-
+#ma s validacuon
 
 # 3 personas juegan golf
 # cada persona tiene la posibilidad de golpear 
@@ -50,39 +50,75 @@
 # se debe mostrar el ganador al final 
 # BONUS  mostrar las barras de energia de cada peleador
 
-import random
-import time
+#import random
+#import time
 
 
+#p1=input("ingrese el nombre del peleador 1")
+#p2=input("ingrese el nombre del peleador 2")
+#HP1=100
+#HP2=100
+#turno=random.randint(1,2)
 
-p1=input("ingrese el nombre del peleador 1")
-p2=input("ingrese el nombre del peleador 2")
-HP1=100
-HP2=100
-turno=random.randint(1,2)
-
-while HP1>0 and HP2>0:
-    if turno %2==0:
-        print(f"turno de {p1}")
-        atk=random.randint(7,18)
-        print(f" el {p1} ataca con {atk} ")
-        HP2-=atk
-        print(f" el hp de {p2} es {HP2}")
-    else:
-        print(f"turno de {p2}")
-        atk=random.randint(7,18)
-        print(f" el {p2} ataca con {atk} ")
-        HP1-=atk
-        print(f" el hp de {p1} es {HP1}")
-    turno+=1
-    time.sleep(2)
-    print(p1, "█"*HP1)
-    print(p2, "█"*HP2)
-if HP1>HP2:
-    print(f"el ganador es: {p1}")
-else:
-    print(f"el ganador es: {p2}")
+#while HP1>0 and HP2>0:
+ #   if turno %2==0:
+  #      print(f"turno de {p1}")
+   #     atk=random.randint(7,18)
+    #    print(f" el {p1} ataca con {atk} ")
+     #   HP2-=atk
+      #  print(f" el hp de {p2} es {HP2}")
+    #else:
+     #   print(f"turno de {p2}")
+      #  atk=random.randint(7,18)
+       # print(f" el {p2} ataca con {atk} ")
+        #HP1-=atk
+        #print(f" el hp de {p1} es {HP1}")
+    #turno+=1
+    #time.sleep(2)
+    #print(p1, "█"*HP1)
+    #print(p2, "█"*HP2)
+#if HP1>HP2:
+ #   print(f"el ganador es: {p1}")
+#else:
+ #   print(f"el ganador es: {p2}")
           
+
+# crea un numero random entre 1 y 100
+# pide al usuario q adivine el numero
+# si el usuario pone un numero mayor al generado
+# debe decir TE PASASTE en caso contrario
+# el numero adivinar es mayor
+# solo hay 5 posibilidades
+
+import random
+
+
+
+
+num=random.randit(1,100)
+pos=1
+guees=int(input("adivina un numero: "))
+while num<1 or num>100:
+        print("numero fuera de rango, intente nuevamente ")
+        guees=int(input("adivina el numero"))
+while pos<5 and guees!=num:
+    print(f"turno {pos}")
+    print(num)
+    if guees>num:
+        print("Te pasaste")
+    else:
+        print("el numero a adivinar es mayor")
+    guees=int(input("adivina un numero"))
+    while num<1 or num>100:
+        print("numero fuera de rango, intente nuevamente ")
+        guees=int(input("adivina el numero"))
+    pos+=1
+if guees==num:
+    print("has adivinado")
+else:
+    print(" se te acabaron las oportunidades")
+
+
 
 
 
