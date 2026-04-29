@@ -1,0 +1,36 @@
+
+# preguntar el folio de una entrada a un concierto
+# validad que los folios esten entre 7000 y 21000
+# preguntar si es cancha vip, cancha general o tribuna
+# cada entrada vale 40000 pero los impuestos son
+# vip*1.8 , general *1.4, tribuna *1.2
+# mostrar el valor a pagar al final
+total=0
+
+folio=int(input("bienvenide ingrese su folio por favor"))
+while folio<7000 and folio>21000:
+    print("folio fuera del rango")
+
+    folio=int(input("bienvenide ingrese su folio por favor"))
+
+    entrada=int(input(print('''¿que tipo de entrada tiene?
+            1. Entrada vip $72.000
+            2. Entrada general $56.000
+            3. Entrada tribuna $48000
+            4. Salir del menu''')))
+    match entrada:
+         case 1:
+              print("ha seleccionado Entrada vip")
+              total+=72000
+         case 2:
+              print("ha seleccionado Entrada general")
+              total+=56000
+         case 3:
+              print("ha seleccionado Tribuna")
+              total+=48000
+         case 4:
+              print(f"El total a pagar es {total}")
+              print("Saliendo del menu")
+         case _:
+              print("Opcion invalida")
+    
